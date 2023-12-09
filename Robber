@@ -1,0 +1,30 @@
+import java.util.*;                                         
+abstract class Robber {                                     
+                                                            
+    abstract int RowHouses(int[] money);                    
+    abstract int RoundHouses(int[] money);                  
+    abstract int SquareHouse(int[] money);                  
+    abstract int MultiHouseBuilding(int[] money);           
+                                                            
+    // Method to print RobbingClass                         
+    void RobbingClass() {                                   
+        System.out.println("MScAI&ML");                     
+    }                                                       
+                                                            
+    void MachineLearning() {                                
+        System.out.println("I love MachineLearning.");      
+    }                                                       
+}                                                           
+                                                            
+class JAVAProfessionalRobber extends Robber {               
+    int RowHouses(int[] money) {                            
+        Scanner scanner = new Scanner(System.in);           
+                                                            
+        System.out.print("Enter an integer: ");             
+        int userInput = scanner.nextInt();                  
+        System.out.println("You entered: " + userInput);    
+                                                            
+        scanner.close();                                    
+                                                            
+        return 0;                                           
+    }                                                       
