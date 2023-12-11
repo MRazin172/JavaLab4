@@ -1,30 +1,80 @@
-import java.util.*;                                         
-abstract class Robber {                                     
-                                                            
-    abstract int RowHouses(int[] money);                    
-    abstract int RoundHouses(int[] money);                  
-    abstract int SquareHouse(int[] money);                  
-    abstract int MultiHouseBuilding(int[] money);           
-                                                            
-    // Method to print RobbingClass                         
-    void RobbingClass() {                                   
-        System.out.println("MScAI&ML");                     
-    }                                                       
-                                                            
-    void MachineLearning() {                                
-        System.out.println("I love MachineLearning.");      
-    }                                                       
-}                                                           
-                                                            
-class JAVAProfessionalRobber extends Robber {               
-    int RowHouses(int[] money) {                            
-        Scanner scanner = new Scanner(System.in);           
-                                                            
-        System.out.print("Enter an integer: ");             
-        int userInput = scanner.nextInt();                  
-        System.out.println("You entered: " + userInput);    
-                                                            
-        scanner.close();                                    
-                                                            
-        return 0;                                           
-    }                                                       
+import java.util.*;
+
+abstract class Robber {
+    // Method to print RobbingClass
+    abstract void RobbingClass();
+
+    void MachineLearning() {
+        System.out.println("I love machinelearning");
+    }
+}
+
+class JAVAProfessionalRobber extends Robber {
+    int RowHouses() {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] rowmoney = new int[6];
+        System.out.println("Enter 6 numbers for the row array:");
+        for (int i = 0; i < rowmoney.length; i++) {
+            rowmoney[i] = scanner.nextInt();
+        }
+        int sum = 0;
+        for (int i = 0; i < rowmoney.length; i += 2) {
+            sum += rowmoney[i];
+        }
+        System.out.println("The maximum amount that can be robbed without getting caught is " + sum);
+        return sum;
+    }
+
+    int RoundHouses() {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] roundmoney = new int[8];
+        System.out.println("Enter  8 numbers for the circular array:");
+        for (int i = 0; i < roundmoney.length; i++) {
+            roundmoney[i] = scanner.nextInt();
+        }
+        int sumround = 0;
+        for (int i = 0; i < roundmoney.length; i += 2) {
+            sumround += roundmoney[i];
+        }
+        System.out.println("The maximum amount that can be robbed without getting caught is " + sumround);
+        return sumround;
+    }
+
+    int SquareHouse() {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] squaremoney = new int[4];
+        System.out.println("Enter 4 numbers for the square array:");
+        for (int i = 0; i < squaremoney.length; i++) {
+            squaremoney[i] = scanner.nextInt();
+        }
+        scanner.close();
+        int sumsquare = 0;
+        for (int i = 0; i < squaremoney.length; i += 2) {
+            sumsquare += squaremoney[i];
+        }
+        System.out.println("The maximum amount that can be robbed without getting caught is " + sumsquare);
+        return sumsquare;
+    }
+
+    int MultiHouseBuilding(int[] money) {
+        return 0;
+    }
+
+    void RobbingClass() {
+        System.out.println("MScAI&ML");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        JAVAProfessionalRobber robber = new JAVAProfessionalRobber();
+        robber.RobbingClass();
+        robber.MachineLearning();
+        robber.RowHouses();
+        robber.RoundHouses();
+        robber.SquareHouse();
+    }
+}
