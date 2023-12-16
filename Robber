@@ -30,10 +30,13 @@ class JAVAProfessionalRobber extends Robber {
                 odd += rowmoney[i];
             }
         }
+        int sumofirstandlast;
+        sumofirstandlast=rowmoney[0]+rowmoney[3];
 
-        int largest = Math.max(even, odd);
-        System.out.println("The maximum amount that can be robbed without getting caught in row is " + largest);
-        return largest;
+        int templargest = Math.max(even, odd);
+        int actuallargest=Math.max(templargest,sumofirstandlast);
+        System.out.println("The maximum amount that can be robbed without getting caught in row is " + actuallargest);
+        return actuallargest;
 
     }
 
@@ -102,4 +105,3 @@ public class Main {
         robber.SquareHouse();
     }
 }
-
